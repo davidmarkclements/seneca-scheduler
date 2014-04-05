@@ -1,0 +1,35 @@
+{
+  "name": "seneca-scheduler",
+  "version": "0.0.0",
+  "description": "Senecea scheduler plugin",
+  "main": "lib/scheduler.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -u qunit",
+    "debug-test": "node_modules/.bin/node-debug -c node_modules/.bin/_mocha -u qunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/davidmarkclements/seneca-scheduler"
+  },
+  "keywords": [
+    "seneca",
+    "scheduler",
+    "scheduling",
+    "cron"
+  ],
+  "author": "David Mark Clements",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidmarkclements/seneca-scheduler/issues"
+  },
+  "homepage": "https://github.com/davidmarkclements/seneca-scheduler",
+  "devDependencies": {
+    "seneca": "^0.5.15",
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2"
+  },
+  "dependencies": {
+    "node-schedule": "^0.1.13",
+    "moment": "^2.5.1"
+  }
+}
