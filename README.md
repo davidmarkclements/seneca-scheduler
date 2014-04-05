@@ -290,13 +290,13 @@ None.
 To see what this plugin is doing, try:
 
 ```sh
-node your-app.js --seneca.log=plugin:mail
+node your-app.js --seneca.log=plugin:scheduler
 ```
 
 This will print action logs and plugin logs for the user plugin. To skip the action logs, use:
 
 ```sh
-node your-app.js --seneca.log=type:plugin,plugin:mail
+node your-app.js --seneca.log=type:plugin,plugin:scheduler
 ```
 
 You can also set up the logging programmatically:
@@ -304,7 +304,7 @@ You can also set up the logging programmatically:
     var seneca = require('seneca')({
       log:{
         map:[
-          {plugin:'mail',handler:'print'}
+          {plugin:'scheduler',handler:'print'}
         ]
       }
     })
