@@ -1,7 +1,7 @@
 {
   "name": "seneca-scheduler",
-  "version": "0.0.1",
-  "description": "Senecea scheduler plugin",
+  "version": "0.1.1",
+  "description": "Seneca scheduler plugin",
   "main": "lib/scheduler.js",
   "scripts": {
     "test": "node_modules/.bin/mocha -u qunit",
@@ -24,14 +24,13 @@
   },
   "homepage": "https://github.com/davidmarkclements/seneca-scheduler",
   "devDependencies": {
-    "seneca": "^0.5.15",
-    "chai": "^1.9.1",
-    "mocha": "^1.18.2"
+    "seneca": "^3.3.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   },
   "dependencies": {
-    "node-schedule": "^0.1.13",
-    "moment": "^2.5.1",
-    "lodash": "~2.4.1"
-
+    "node-schedule": "^1.2.0",
+    "moment": "^2.17.1",
+    "lodash": "~4.17.4"
   }
 }

@@ -1,4 +1,10 @@
-var seneca = require('seneca')();
+var seneca = require('seneca')({
+  // Namespace for strict options.
+  strict: {
+    // Allow results to be non-Objects.
+    result: false
+  }
+});
 var moment = require('moment');
 var expect = require('chai').expect;
 
@@ -14,7 +20,7 @@ test('the "for" argument accepting Date object', function (done) {
   seneca.act({
     role: role,
     cmd: 'register',
-    for: moment().add('seconds', 1).toDate(),
+    for: moment().add(1, 'seconds').toDate(),
     task: function () {
       var now = Date.now();
 
@@ -34,7 +40,7 @@ test('the "for" argument accepting Date object', function (done) {
 test('the "for" argument accepting object literal', function (done) {
 
   var registeredAt;
-  var date = moment().add('seconds', 1);
+  var date = moment().add(1, 'seconds');
 
   seneca.act({
     role: role,
@@ -47,7 +53,7 @@ test('the "for" argument accepting object literal', function (done) {
       minute: date.minute(),
       second: date.second()
     },
-    task: function () {
+    task: function() {
       var now = Date.now()
 
       // expect(now).to.be.closeTo(registeredAt + 1000, 500);
@@ -68,9 +74,7 @@ test('the "for" argument accepting string', function (done) {
     role: role,
     cmd: 'register',
     for: '10/22/15',
-    task: function () {
-
-    }
+    task: function () {}
   }, function (err) {
     expect(err).to.be.null;
     done();
@@ -92,7 +96,7 @@ test('the "every" argument accepting object literal', function (done) {
       minute: null,
       second: null
     },
-    task: function () {}
+    task: function() {}
   }, function (err, task) {
     expect(err).to.be.null;
     var nextCall = task.nextInvocation();
@@ -112,7 +116,7 @@ test('the "every" argument with intuitive object literal', function (done) {
       '20th': 'minute',
       '30th': 'second'
     },
-    task: function () { }
+    task: function() {}
   }, function (err, task) {
     var every = task.pattern.every;
     expect(err).to.be.null;
@@ -147,7 +151,7 @@ test('returns a task for a given id', function (done) {
   seneca.act({
     role: role,
     cmd: 'register',
-    for: moment().add('years', 1),
+    for: moment().add(1, 'years'),
     task: someTask,
   }, function (err, task) {
 
@@ -180,7 +184,7 @@ test('outputs the ids of all registerd tasks', function (done) {
   seneca.act({
     role: role,
     cmd: 'register',
-    for: moment().add('years', 1),
+    for: moment().add(1, 'years'),
     task: function () {},
   }, function (err, task) {
     ids.push(task.id);
@@ -188,7 +192,7 @@ test('outputs the ids of all registerd tasks', function (done) {
     seneca.act({
       role: role,
       cmd: 'register',
-      for: moment().add('years', 1),
+      for: moment().add(1, 'years'),
       task: function () {},
     }, function (err, task) {
       ids.push(task.id);
@@ -217,7 +221,7 @@ test('cancels a task when given an id', function (done) {
   seneca.act({
     role: role,
     cmd: 'register',
-    for: moment().add('years', 1),
+    for: moment().add(1, 'years'),
     task: function () {},
   }, function (err, task) {
 
@@ -250,7 +254,7 @@ test('cancels multiple tasks when given an array of ids', function (done) {
   seneca.act({
     role: role,
     cmd: 'register',
-    for: moment().add('years', 1),
+    for: moment().add(1, 'years'),
     task: function () {},
   }, function (err, task) {
 
@@ -259,7 +263,7 @@ test('cancels multiple tasks when given an array of ids', function (done) {
     seneca.act({
       role: role,
       cmd: 'register',
-      for: moment().add('years', 1),
+      for: moment().add(1, 'years'),
       task: function () {},
     }, function (err, task) {
 
@@ -300,14 +304,14 @@ test('removes all jobs', function (done) {
   seneca.act({
     role: role,
     cmd: 'register',
-    for: moment().add('years', 1),
+    for: moment().add(1, 'years'),
     task: function () {},
   }, function (err, task) {
 
     seneca.act({
       role: role,
       cmd: 'register',
-      for: moment().add('years', 1),
+      for: moment().add(1, 'years'),
       task: function () {},
     }, function (err, task) {
 

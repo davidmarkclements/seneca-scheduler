@@ -1,0 +1,9 @@
+{
+  "verbose": false,
+  "watch": [
+    "src/**/*.js"
+  ],
+  "ignore": [
+    "*.log"
+  ]
+}
