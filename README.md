@@ -1,6 +1,6 @@
 # seneca-scheduler
 
-## An email plugin for the [Seneca](http://senecajs.org) toolkit
+## A scheduler plugin for the [Seneca](http://senecajs.org) toolkit
 
 This module is a plugin for the Seneca framework. It provides scheduling capability for actions.
 
