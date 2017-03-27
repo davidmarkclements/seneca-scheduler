@@ -78,6 +78,7 @@ seneca.ready(function(err){
 
 })
 ```
+
 This will schedule an event for the 30th minute, of the 4th hour of 5th
 day of the month (for days of the week we use dayOfWeek).
 
@@ -107,6 +108,33 @@ seneca.ready(function(err){
 
 })
 ```
+
+or, using CRON like style (NEW)
+
+```JavaScript
+var seneca = require('seneca')();
+
+seneca.use('scheduler');
+
+seneca.ready(function(err){
+  if( err ) return console.log(err);
+
+  seneca.act({
+    role:'scheduler',
+    cmd:'register',
+    every: {
+      cron: '*/5 * * * *'
+    },
+    task: function () {
+      //do things
+      console.log('doing things every 5 minutes');
+    },
+  })
+
+})
+```
+
+
 
 ## Install
 

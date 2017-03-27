@@ -135,6 +135,26 @@ test('the "every" argument with intuitive object literal', function (done) {
 });
 
 
+test('the "every" argument accepting object literal containing cron style scheduling', function (done) {
+
+  seneca.act({
+    role: role,
+    cmd: 'register',
+    every: {
+      cron: '*/5 * * * *'
+    },
+    task: function() {}
+  }, function (err, task) {
+    expect(err).to.be.null;
+    var nextCall = task.nextInvocation();
+    var nextTriggerInMinutes = 5 * Math.ceil( new Date().getMinutes() / 5 );
+    expect(nextCall.getMinutes()).to.equal(nextTriggerInMinutes);
+    done();
+  });
+
+});
+
+
 
 //TODO
 // suite('update');
