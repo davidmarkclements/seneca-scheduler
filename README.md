@@ -20,9 +20,9 @@ You can customize this by overriding the appropriate actions.
 If you're using this module, feel free to contact me on twitter if you
 have any questions! :) [@davidmarkclem](http://twitter.com/davidmarkclem)
 
-Current Version: 0.0.0
+Current Version: 0.1.1
 
-Tested on: node 0.10.26, seneca 0.5.15
+Tested on: node 6.9.1, seneca 3.3.0
 
 
 
