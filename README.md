@@ -191,8 +191,7 @@ Register a task with the scheduler
        dayOfWeek begins with 0 for Sunday, running to 6 for Saturday.
      * Suffixed Number properties: for easier reading, properties can describe the "Nth" interval of a period,
        e.g {'4th':'hour', '3rd day'} would be 4am every 3rd day of the month. 
-     * cron property: set the reccurrence as you would with a cron; ex: '*/5 * * * *'
-     },
+     * Cron property: set the reccurrence as you would with a cron; ex: '*/5 * * * *'
    * _task_: A function to call when the time is right
 
 #### Provides:
