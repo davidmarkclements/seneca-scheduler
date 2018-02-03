@@ -10,19 +10,19 @@ With this module you can:
    * Schedule a recurring task to that happens at prescribed intervals
 
 The default implementation uses the
-[node-schedule](https://github.com/mattpat/node-schedule) module to handle the event scheduling
+[node-schedule](https://github.com/node-schedule/node-schedule) module to handle the event scheduling
 
 You can customize this by overriding the appropriate actions.
 
 
 ## Support
 
-If you're using this module, feel free to contact me on twitter if you
-have any questions! :) [@davidmarkclem](http://twitter.com/davidmarkclem)
+David Mark Clements (https://github.com/davidmarkclements/seneca-scheduler) version is DEPRECATED.
 
-Current Version: 0.1.1
+Please now use the following repository: https://github.com/Doubl3/seneca-scheduler
 
-Tested on: node 6.9.1, seneca 3.3.0
+* Current Version: 0.2.1
+* Tested on: node 6.9.1, seneca 3.3.0
 
 
 
@@ -122,6 +122,7 @@ seneca.ready(function(err){
   seneca.act({
     role:'scheduler',
     cmd:'register',
+    name: 'Name of your choice: MANDATORY for cron-like scheduling',
     every: {
       cron: '*/5 * * * *'
     },
@@ -134,6 +135,9 @@ seneca.ready(function(err){
 })
 ```
 
+**IMPORTANT**: cron-like scheduling requires a name to properly work.
+Otherwise the scheduling failed to be initialized by node-schedule lib.
+Needs to be fixed in next versions.
 
 
 ## Install
@@ -190,7 +194,7 @@ Register a task with the scheduler
        but unlike the _for_ object, it can also have a dayOfWeek property to schedule events to occur weekly.
        dayOfWeek begins with 0 for Sunday, running to 6 for Saturday.
      * Suffixed Number properties: for easier reading, properties can describe the "Nth" interval of a period,
-       e.g {'4th':'hour', '3rd day'} would be 4am every 3rd day of the month. 
+       e.g {'4th':'hour', '3rd day'} would be 4am every 3rd day of the month.
      * Cron property: set the reccurrence as you would with a cron; ex: '*/5 * * * *'
    * _task_: A function to call when the time is right
 
