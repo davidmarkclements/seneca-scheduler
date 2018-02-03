@@ -1,6 +1,6 @@
 {
   "name": "seneca-scheduler",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Seneca scheduler plugin",
   "main": "lib/scheduler.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/davidmarkclements/seneca-scheduler"
+    "url": "github.com/Doubl3/seneca-scheduler"
   },
   "keywords": [
     "seneca",
@@ -18,18 +18,22 @@
     "cron"
   ],
   "author": "David Mark Clements",
+  "contributors": [
+    { "name": "Herve Berard", "url": "https://github.com/Doubl3" },
+    { "name": "Jun Matsushita", "url": "https://github.com/jmatsushita" }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/davidmarkclements/seneca-scheduler/issues"
+    "url": "https://github.com/Doubl3/seneca-scheduler/issues"
   },
-  "homepage": "https://github.com/davidmarkclements/seneca-scheduler",
+  "homepage": "https://github.com/Doubl3/seneca-scheduler",
   "devDependencies": {
     "seneca": "^3.3.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
   },
   "dependencies": {
-    "node-schedule": "^1.2.0",
+    "node-schedule": "^1.3.0",
     "moment": "^2.17.1",
     "lodash": "~4.17.4"
   }
