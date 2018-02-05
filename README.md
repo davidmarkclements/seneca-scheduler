@@ -368,5 +368,5 @@ to debug. Awesome sauce.
   * pause (pause a recurring task)
   * executable tasks (command line strings)
   * fuzzy date matching ('next Tuesday', 'every Wednesday at 5')
-  * cron strings
+  * ~~cron strings~~
   * tests for error cases
